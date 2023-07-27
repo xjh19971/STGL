@@ -66,15 +66,15 @@ async function setSimilarityPlot(chosen_index)
     if(chosen_index==1)
     {
     var layout = {
-        autosize: false,
-        width: 400,
-        height: 300,
+        autosize: true,
+        width: 500,
+        height: 400,
         margin: {
             l: 0,
             r: 0,
             b: 0,
             t: 0,
-            pad: 4
+            pad: 0
           },        
         images: [
             {
@@ -147,15 +147,15 @@ async function setTrajectoryPlot(chosen_index)
     if (chosen_index==1)
     {
     var layout = {
-        autosize: false,
-        width: 400,
-        height: 300,
+        autosize: true,
+        width: 500,
+        height: 400,
         margin: {
             l: 0,
             r: 0,
             b: 0,
             t: 0,
-            pad: 4
+            pad: 0
           },        
         images: [
             {
@@ -315,6 +315,10 @@ for (var i = 0; i < textArray.length;  i++) {
             var currentOption = document.createElement('option');
             currentOption.text = textArray[i];
             countrySelector.appendChild(currentOption);
+
+            //set default as VPAir
+            if(textArray[i]=="VPAir")
+                currentOption.selected = true;
         }
 
 // load and organize JSON into arrays for qu, db and retrievals
