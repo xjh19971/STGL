@@ -9,6 +9,8 @@ let yArray_1_db;
 let xArray_2_db;
 let yArray_2_db;
 
+let indices_arr_2;
+
 let x_arrays;
 let y_arrays;
 
@@ -33,20 +35,23 @@ async function load_arr()
 
     let xarray_2_file = await fetch('https://anyloc.github.io/data/trajectory_data/VPAIR_x.json');
     let yarray_2_file = await fetch('https://anyloc.github.io/data/trajectory_data/VPAIR_y.json');
-    // let retr_2_file = await fetch('https://anyloc.github.io/data/trajectory_data/VPAIR_retrievals.json');
+    let retr_2_file = await fetch('https://anyloc.github.io/data/trajectory_data/retrievals_VPAIR.json');
 
     let xArray_2_json = await xarray_2_file.json();
     let yArray_2_json = await yarray_2_file.json();
-    // let retr_2_json = await retr_2_file.json();
+    let retr_2_json = await retr_2_file.json();
 
-    let ret_arr = [xArray_json,yArray_json,retr_json,xArray_2_json,yArray_2_json];//,retr_2_json];
+    let ret_arr = [xArray_json,yArray_json,retr_json,xArray_2_json,yArray_2_json,retr_2_json];
     return ret_arr;
 }
 
 async function setSimilarityPlot(chosen_index)
 {
 
-    colors= new Array(top_retrieval_arrays[chosen_index].length).fill('#1f77b4');
+     if (chosen_index==0)
+        colors= new Array(top_retrieval_arrays[chosen_index].length).fill('#1f77b4');
+    else
+        colors= new Array(top_retrieval_arrays[chosen_index].length).fill('#FCA510');
 
     //set plot layout
     var trace1 = {
@@ -127,7 +132,11 @@ async function setSimilarityPlot(chosen_index)
 
 async function setTrajectoryPlot(chosen_index) 
 {
-    colors= new Array(top_retrieval_arrays[chosen_index].length).fill('#1f77b4');
+
+    if (chosen_index==0)
+        colors= new Array(top_retrieval_arrays[chosen_index].length).fill('#1f77b4');
+    else
+        colors= new Array(top_retrieval_arrays[chosen_index].length).fill('#FCA510');
 
     //set plot layout
     var trace1 = {
@@ -229,14 +238,32 @@ async function setTrajectoryPlot(chosen_index)
         //set query image
         const q_image = document.getElementById("q_image");
         let q_num = data.points[0].pointNumber;
-        q_image_num = q_num;
-        q_image.src =  "data/VPAir_images/"+q_image_num.toString()+".png";
+        // q_image_num = q_num;
+        q_image_num = String(indices_arr_2[q_num]).padStart(5,'0'); 
+        q_image.src =  "data/VPAir_images/subsampled_vpair/queries/"+q_image_num.toString()+".png";
         q_image.style.display = "block";
     
         //set database image
         const db_image = document.getElementById("db_image");
         let db_num = top_retrieval_arrays[chosen_index][q_num][0];
-        db_image.src = "data/VPAir_images/"+db_num.toString()+".png";
+        
+        lower_bound = parseInt(db_num/15)*15;
+        upper_bound = (parseInt(db_num/15)+1)*15;
+        
+        if (db_num-lower_bound<8)
+        {
+            db_num = lower_bound;
+        }
+        else
+        {
+            db_num = upper_bound;
+        }
+
+        db_num = db_num+1;
+
+        db_num = String(db_num).padStart(5,'0');
+        // console.log(q_image_num,db_num);
+        db_image.src = "data/VPAir_images/subsampled_vpair/reference_views/"+db_num.toString()+".png";
         db_image.style.display = "block";
         }
 
@@ -265,7 +292,7 @@ async function setTrajectoryPlot(chosen_index)
         }
         let color_scheme = top_retrieval_arrays[chosen_index][q_num];
 
-        var update = {'marker':{color: color_scheme , size:12,opacity: 0.5,colorscale: 'Hot'}};
+        var update = {'marker':{color: color_scheme , size:12,opacity: 0.5,colorscale: 'Hot',colorbar:{thickness: 20}}};
         Plotly.restyle('sim_myPlot', update, [tn]);
         }
 
@@ -287,9 +314,11 @@ async function setTrajectoryPlot(chosen_index)
         {
             color_nums.push(i);
         }
+        //TODO : Subsampled scheme, needs to be debugged for adding missing images
         let color_scheme = top_retrieval_arrays[chosen_index][q_num];
 
         var update = {'marker':{color: color_scheme , size:12,opacity: 0.5,colorscale: 'Hot'}};
+        // console.log(update);
         Plotly.restyle('sim_myPlot', update, [tn]);
         }
 
@@ -338,7 +367,16 @@ yArray_2 = returned_arr[4];
 xArray_2_db = xArray_2;
 yArray_2_db = yArray_2;
 
-top_retrieval_array_2 = [100,151,131,102,150,168,196,130,140,152,155];
+indices_arr_2 = [];
+
+for(let i =1;i<2706;i=i+15)
+{
+    indices_arr_2.push(i);
+}
+
+
+top_retrieval_array_2 = returned_arr[5];
+
 
 x_arrays = [xArray_1,xArray_2];
 y_arrays = [yArray_1,yArray_2];
