@@ -33,8 +33,8 @@ async function load_arr()
     let yArray_json = await yarray_file.json();
     let retr_json = await retr_file.json();
 
-    let xarray_2_file = await fetch('https://anyloc.github.io/data/trajectory_data/VPAIR_x.json');
-    let yarray_2_file = await fetch('https://anyloc.github.io/data/trajectory_data/VPAIR_y.json');
+    let xarray_2_file = await fetch('https://anyloc.github.io/data/trajectory_data/VPAIR_x_new.json');
+    let yarray_2_file = await fetch('https://anyloc.github.io/data/trajectory_data/VPAIR_y_new.json');
     let retr_2_file = await fetch('https://anyloc.github.io/data/trajectory_data/retrievals_VPAIR.json');
 
     let xArray_2_json = await xarray_2_file.json();
