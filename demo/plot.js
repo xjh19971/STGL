@@ -233,6 +233,8 @@ async function setTrajectoryPlot(chosen_index)
         db_image.style.display = "block";
         }
 
+
+
         else if (chosen_index==1)
         {
         //set query image
@@ -291,7 +293,6 @@ async function setTrajectoryPlot(chosen_index)
             color_nums.push(i);
         }
         let color_scheme = top_retrieval_arrays[chosen_index][q_num];
-
         var update = {'marker':{color: color_scheme , size:12,opacity: 0.5,colorscale: 'Hot',colorbar:{thickness: 20}}};
         Plotly.restyle('sim_myPlot', update, [tn]);
         }
@@ -341,9 +342,10 @@ async function setTrajectoryPlot(chosen_index)
 
         //TODO : Subsampled scheme, needs to be debugged for adding missing images
         // let color_scheme = top_retrieval_arrays[chosen_index][q_num];
-
-        var update = {'marker':{color: color_nums , size:12,opacity: 0.5,colorscale: 'Hot',colorbar:{thickness: 20}}};
-        console.log(color_nums);
+        marker_symb = new Array(181).fill("circle");
+        marker_symb[parseInt(top_retrieval_arrays[chosen_index][q_num][0]/15)] = "star";
+        var update = {'marker':{color: color_nums , size:12,opacity: 0.5,colorscale: 'Hot',colorbar:{thickness: 20},symbol:marker_symb}};
+        console.log(parseInt(top_retrieval_arrays[chosen_index][q_num][0]/15));
         Plotly.restyle('sim_myPlot', update, [tn]);
         }
 
