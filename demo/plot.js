@@ -293,7 +293,12 @@ async function setTrajectoryPlot(chosen_index)
             color_nums.push(i);
         }
         let color_scheme = top_retrieval_arrays[chosen_index][q_num];
-        var update = {'marker':{color: color_scheme , size:12,opacity: 0.5,colorscale: 'Hot',colorbar:{thickness: 20}}};
+        // color_scheme = color_scheme.reverse();
+
+        let marker_symb = new Array(181).fill("circle");
+        marker_symb[top_retrieval_arrays[chosen_index][q_num][0]] = "star";
+        console.log(color_scheme);
+        var update = {'marker':{color: color_scheme , size:12,opacity: 0.5,colorscale: 'Hot',colorbar:{thickness: 20},symbol:marker_symb}};
         Plotly.restyle('sim_myPlot', update, [tn]);
         }
 
@@ -312,7 +317,7 @@ async function setTrajectoryPlot(chosen_index)
         let color_nums = new Array(181).fill(0);
 
         //the retrievals are not sub-sampled numbers, first need to sub-sample them.
-        let cur_color=400;
+        let cur_color=0;
         for(var i=0;i<top_retrieval_arrays[chosen_index][q_num].length;i++)
         {
             let lower_idx = 0;
@@ -336,13 +341,13 @@ async function setTrajectoryPlot(chosen_index)
             if(color_nums[subsampled_idx]==0)
             {
                 color_nums[subsampled_idx] = cur_color;
-                cur_color = cur_color - 20;    
+                cur_color = cur_color + 20;    
             }
         }
 
         //TODO : Subsampled scheme, needs to be debugged for adding missing images
         // let color_scheme = top_retrieval_arrays[chosen_index][q_num];
-        marker_symb = new Array(181).fill("circle");
+        let marker_symb = new Array(181).fill("circle");
         marker_symb[parseInt(top_retrieval_arrays[chosen_index][q_num][0]/15)] = "star";
         var update = {'marker':{color: color_nums , size:12,opacity: 0.5,colorscale: 'Hot',colorbar:{thickness: 20},symbol:marker_symb}};
         console.log(parseInt(top_retrieval_arrays[chosen_index][q_num][0]/15));
