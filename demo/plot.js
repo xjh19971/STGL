@@ -147,7 +147,7 @@ async function setTrajectoryPlot(chosen_index)
             size: 12,
             opacity: 0.5,
             color:colors,
-            colorscale: 'Greens'
+            colorscale: 'Greens',
         }
     };
 
@@ -308,17 +308,42 @@ async function setTrajectoryPlot(chosen_index)
         };
 
         let q_num = data.points[0].pointNumber;
-        let color_nums = [];
+        let color_nums = new Array(181).fill(0);
 
-        for(var i=181;i>=0;i--)
+        //the retrievals are not sub-sampled numbers, first need to sub-sample them.
+        let cur_color=400;
+        for(var i=0;i<top_retrieval_arrays[chosen_index][q_num].length;i++)
         {
-            color_nums.push(i);
-        }
-        //TODO : Subsampled scheme, needs to be debugged for adding missing images
-        let color_scheme = top_retrieval_arrays[chosen_index][q_num];
+            let lower_idx = 0;
+            let upper_idx = 0;
+            let subsampled_idx = 0;    
 
-        var update = {'marker':{color: color_scheme , size:12,opacity: 0.5,colorscale: 'Hot'}};
-        // console.log(update);
+            lower_idx = parseInt(top_retrieval_arrays[chosen_index][q_num][i]/15);
+            upper_idx = (parseInt(top_retrieval_arrays[chosen_index][q_num][i]/15)+1);
+            
+            if (subsampled_idx-lower_idx<8)
+            {
+                subsampled_idx = lower_idx;
+            }
+            else
+            {
+                subsampled_idx = upper_idx;
+            }
+    
+            // subsampled_idx = subsampled_idx+1;                
+
+            if(color_nums[subsampled_idx]==0)
+            {
+                color_nums[subsampled_idx] = cur_color;
+                cur_color = cur_color - 20;    
+            }
+        }
+
+        //TODO : Subsampled scheme, needs to be debugged for adding missing images
+        // let color_scheme = top_retrieval_arrays[chosen_index][q_num];
+
+        var update = {'marker':{color: color_nums , size:12,opacity: 0.5,colorscale: 'Hot',colorbar:{thickness: 20}}};
+        console.log(color_nums);
         Plotly.restyle('sim_myPlot', update, [tn]);
         }
 
