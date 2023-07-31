@@ -233,8 +233,6 @@ async function setTrajectoryPlot(chosen_index)
         db_image.style.display = "block";
         }
 
-
-
         else if (chosen_index==1)
         {
         //set query image
@@ -286,17 +284,17 @@ async function setTrajectoryPlot(chosen_index)
         };
 
         let q_num = data.points[0].pointNumber;
-        let color_nums = [];
+        // let color_nums = [];
 
-        for(var i=126;i>=0;i--)
-        {
-            color_nums.push(i);
-        }
-        let color_scheme = top_retrieval_arrays[chosen_index][q_num];
-        color_scheme[parseInt(top_retrieval_arrays[chosen_index][q_num][0])] = '#FCA510';        
-        // color_scheme = color_scheme.reverse();
+        // for(var i=126;i>=0;i--)
+        // {
+        //     color_nums.push(i);
+        // }
+        let color_nums = top_retrieval_arrays[chosen_index][q_num];
+        color_nums[parseInt(top_retrieval_arrays[chosen_index][q_num][0])] = '#FCA510';        
+        // color_nums = color_nums.reverse();
 
-        let marker_symb = new Array(color_scheme.length).fill("circle");
+        let marker_symb = new Array(color_nums.length).fill("circle");
         marker_symb[top_retrieval_arrays[chosen_index][q_num][0]] = "star";
 
         let custom_marker_size = new Array(color_nums.length).fill(12);
@@ -305,7 +303,7 @@ async function setTrajectoryPlot(chosen_index)
         let custom_opacity = new Array(color_nums.length).fill(0.5);
         custom_opacity[parseInt(top_retrieval_arrays[chosen_index][q_num][0])] = 1;
 
-        var update = {'marker':{color: color_scheme , size:custom_marker_size,opacity: custom_opacity,colorscale: 'Hot',colorbar:{thickness: 20},symbol:marker_symb}};
+        var update = {'marker':{color: color_nums , size:custom_marker_size,opacity: custom_opacity,colorscale: 'Hot',colorbar:{thickness: 20},symbol:marker_symb}};
         Plotly.restyle('sim_myPlot', update, [tn]);
         }
 
@@ -353,7 +351,6 @@ async function setTrajectoryPlot(chosen_index)
         }
 
         //TODO : Subsampled scheme, needs to be debugged for adding missing images
-        // let color_scheme = top_retrieval_arrays[chosen_index][q_num];
         
         let marker_symb = new Array(181).fill("circle");
         marker_symb[parseInt(top_retrieval_arrays[chosen_index][q_num][0]/15)] = "star";
