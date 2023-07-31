@@ -293,12 +293,19 @@ async function setTrajectoryPlot(chosen_index)
             color_nums.push(i);
         }
         let color_scheme = top_retrieval_arrays[chosen_index][q_num];
+        color_scheme[parseInt(top_retrieval_arrays[chosen_index][q_num][0])] = '#FCA510';        
         // color_scheme = color_scheme.reverse();
 
-        let marker_symb = new Array(181).fill("circle");
+        let marker_symb = new Array(color_scheme.length).fill("circle");
         marker_symb[top_retrieval_arrays[chosen_index][q_num][0]] = "star";
-        console.log(color_scheme);
-        var update = {'marker':{color: color_scheme , size:12,opacity: 0.5,colorscale: 'Hot',colorbar:{thickness: 20},symbol:marker_symb}};
+
+        let custom_marker_size = new Array(color_nums.length).fill(12);
+        custom_marker_size[parseInt(top_retrieval_arrays[chosen_index][q_num][0])] = 25;
+
+        let custom_opacity = new Array(color_nums.length).fill(0.5);
+        custom_opacity[parseInt(top_retrieval_arrays[chosen_index][q_num][0])] = 1;
+
+        var update = {'marker':{color: color_scheme , size:custom_marker_size,opacity: custom_opacity,colorscale: 'Hot',colorbar:{thickness: 20},symbol:marker_symb}};
         Plotly.restyle('sim_myPlot', update, [tn]);
         }
 
@@ -347,14 +354,23 @@ async function setTrajectoryPlot(chosen_index)
 
         //TODO : Subsampled scheme, needs to be debugged for adding missing images
         // let color_scheme = top_retrieval_arrays[chosen_index][q_num];
+        
         let marker_symb = new Array(181).fill("circle");
         marker_symb[parseInt(top_retrieval_arrays[chosen_index][q_num][0]/15)] = "star";
-        var update = {'marker':{color: color_nums , size:12,opacity: 0.5,colorscale: 'Hot',colorbar:{thickness: 20},symbol:marker_symb}};
-        console.log(parseInt(top_retrieval_arrays[chosen_index][q_num][0]/15));
-        Plotly.restyle('sim_myPlot', update, [tn]);
-        }
 
-    });
+        let custom_marker_size = new Array(181).fill(12);
+        custom_marker_size[parseInt(top_retrieval_arrays[chosen_index][q_num][0]/15)] = 25;
+
+        let custom_opacity = new Array(181).fill(0.5);
+        custom_opacity[parseInt(top_retrieval_arrays[chosen_index][q_num][0]/15)] = 1;
+
+        color_nums[parseInt(top_retrieval_arrays[chosen_index][q_num][0]/15)] = '#FCA510';
+        var update = {'marker':{color: color_nums , size:custom_marker_size, opacity: custom_opacity, colorscale: 'Hot',colorbar:{thickness: 20},symbol:marker_symb}};
+
+        Plotly.restyle('sim_myPlot', update, [tn]);
+        console.log(update['marker']);
+
+        }});
 };
 
 
