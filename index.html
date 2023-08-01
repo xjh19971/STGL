@@ -74,20 +74,23 @@
               <a href="https://nik-v9.github.io/">Nikhil Keetha*<sup>1</sup></a>,</span>
               <span class="author-block">
                 <a href="https://theprojectsguy.github.io/">Avneesh Mishra*<sup>2</sup></a>,</span>
-            <span class="author-block">
-              <a href="https://jaykarhade.netlify.app/">Jay Karhade*<sup>1</sup></a>,</span>
-            <span class="author-block">
-              <a href="https://robotics.iiit.ac.in/">Madhava Krishna<sup>2</sup></a>,</span>
-            <span class="author-block">
+              <span class="author-block">
+                <a href="https://jaykarhade.netlify.app/">Jay Karhade*<sup>1</sup></a>,</span>
+              <span class="author-block">
+                <a href="https://krrish94.github.io/">Krishna Murthy Jatavallabhula<sup>3</sup></a>and </span>  
+              <span class="author-block">
               <a href="https://theairlab.org/">Sebastian Scherer<sup>1</sup></a>,</span>
-            <span class="author-block">
-              <a href="https://krrish94.github.io/">Krishna Murthy Jatavallabhula<sup>3</sup></a>and </span>  
+              <span class="author-block">
+                <a href="https://robotics.iiit.ac.in/">Madhava Krishna<sup>2</sup></a>,</span>  
               <span class="author-block">
               <a href="https://scholar.google.co.in/citations?user=oVS3HHIAAAAJ&hl=en">Sourav Garg<sup>4</sup></a></span>
           </div>
 
           <div class="is-size-6 publication-authors">
-            <span class="author-block"><sup>1</sup>Carnegie Mellon University,<sup>2</sup>IIIT-Hyderabad,<sup>3</sup>Massachusetts Institute of Technology,<sup>4</sup>AIML,University of Adelaide</span>
+            <span class="author-block"><sup>1</sup><a href="https://www.ri.cmu.edu/">Carnegie Mellon University</a>,
+              <sup>2</sup><a href="https://robotics.iiit.ac.in//">IIIT-Hyderabad</a>,
+              <sup>3</sup><a href="https://www.csail.mit.edu/">Massachusetts Institute of Technology</a>,
+              <sup>4</sup><a href="https://www.adelaide.edu.au/aiml/">AIML,University of Adelaide</a></span>
           </div>
 
           <div class="is-size-7 publication-authors">
@@ -135,6 +138,17 @@
                   <span>Code</span>
                   </a>
               </span>
+              <!-- Demo Link. -->
+              <span class="link-block">
+                <a href="#interactive_demo"
+                   class="external-link button is-normal is-rounded is-dark" disabled="true">
+                  <span class="icon">
+                      <i class="fa fa-basketball-ball"></i>
+                  </span>
+                  <span>Demo</span>
+                  </a>
+              </span>
+
               <!-- Dataset Link. -->
               <!-- <span class="link-block">
                 <a href="#"
@@ -160,7 +174,7 @@
       <!-- <video id="teaser" autoplay muted loop playsinline height="100%"> -->
         <!-- <img source src="./data/method_viz/Splash GIF.gif" /> -->
         <video id="dinov2_gardens" autoplay controls muted playsinline height="100%">
-          <source src="./data/method_viz/splash_gif.mp4"
+          <source src="./data/method_viz/splash_vid_compressed.mp4"
                   type="video/mp4">
         </video>
       <!-- </video> -->
@@ -180,28 +194,28 @@
         <div class="content has-text-justified">
           <p>
             Visual Place Recognition (VPR) is vital for robot
-            localization. The most performant VPR approaches to date
-            are environment- and task-specific – while they exhibit strong
+            localization. To date, the most performant VPR approaches
+            are environment- and task-specific: while they exhibit strong
             performance in structured environments (predominantly urban
             driving), their performance degrades severely in unstructured
             environments, rendering most approaches brittle to robust real-
             world deployment. In this work, we develop a universal solution
             to VPR – a technique that works across a broad range of
-            structured and unstructured environments (urban outdoors,
+            structured and unstructured environments (urban, outdoors,
             indoors, aerial, underwater, and subterranean environments)
             without any re-training or finetuning. We demonstrate that
             general-purpose feature representations derived from off-the-
             shelf self-supervised models with no VPR-specific training are
             the right substrate upon which to build such a universal VPR
             solution. Combining these derived features with unsupervised
-            feature aggregation methods results in a general-purpose VPR
-            solution that significantly outperforms existing approaches
-            (often by a factor of 2× through 4×). Moreover, we further
-            boost performance by characterizing the semantic properties of
+            feature aggregation enables our suite of methods, AnyLoc,
+            to achieve up to 4× significantly higher performance than
+            existing approaches. We further obtain a 6% improvement
+            in performance by characterizing the semantic properties of
             these features, uncovering unique domains which encapsulate
             datasets from similar environments. Our detailed experiments
-            and analysis lay a foundation for building VPR solutions that
-            may be deployed anywhere, anytime, and from any perspective.
+            and analysis lay a foundation for building VPR solutions
+            that may be deployed anywhere, anytime, and across anyview
           </p>
         </div>
       </div>
@@ -224,7 +238,21 @@
 </section>
 
 <br>
+<section class="section">
 
+  <div class="columns is-centered has-text-centered">
+    <div class="column">
+      <h2 class="title is-3">Trajectory Similarity Videos</h2>
+      <p></p>
+    </div>
+  </div>
+
+  <div class="container is-max-desktop">
+
+
+
+  </div>
+</section>
 
 <section class="section">
   <div class="container is-max-desktop">
@@ -286,6 +314,11 @@
     <p></p>
     <br>
     <br>
+    </div>
+</section>
+
+<section class="hero is-light is-small">
+  <div class="container is-max-desktop">
 
     <div class="columns is-centered has-text-centered">
       <div class="column">
@@ -293,7 +326,7 @@
         <p></p>
       </div>
     </div>
-
+    
     <div class="columns is-centered">
       <div class="column has-text-centered">
         <div class="content">
@@ -320,6 +353,11 @@
     </div>
 
     <p></p>
+    </div>
+
+</section>
+<section class="hero is-small">
+  <div class="container is-max-desktop">
 
     <div class="columns is-centered has-text-centered">
       <div class="column">
@@ -327,9 +365,9 @@
         <p></p>
       </div>
     </div>
-    
-    <div class="columns is-centered">
 
+    <div class="columns is-centered">
+            
       <div class="column has-text-centered">
         <div class="content">
           <h2 class="title is-4">DINO ViT-S L9 Key</h2>
@@ -352,9 +390,13 @@
         </div>
       </div>
 
+      </div>
     </div>
-
     <p></p>
+</section>
+
+<section class="hero is-light is-small">
+  <div class="container is-max-desktop">
 
     <div class="columns is-centered has-text-centered">
       <div class="column">
@@ -362,7 +404,7 @@
         <p></p>
       </div>
     </div>
-    
+  
     <div class="columns is-centered">
 
       <div class="column has-text-centered">
@@ -397,9 +439,8 @@
           <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
         </div>
       </div>
-
     </div>
-
+  </div>
 </section>
 
 <script type="text/javascript">
