@@ -319,10 +319,10 @@ async function setTrajectoryPlot(chosen_index)
         };
 
         let q_num = data.points[0].pointNumber;
-        let color_nums = new Array(181).fill(0);
+        let color_nums = new Array(181).fill(75);
 
         //the retrievals are not sub-sampled numbers, first need to sub-sample them.
-        let cur_color=0;
+        let cur_color=300;
         for(var i=0;i<top_retrieval_arrays[chosen_index][q_num].length;i++)
         {
             let lower_idx = 0;
@@ -343,12 +343,23 @@ async function setTrajectoryPlot(chosen_index)
     
             // subsampled_idx = subsampled_idx+1;                
 
-            if(color_nums[subsampled_idx]==0)
+            if(color_nums[subsampled_idx]==75)
             {
                 color_nums[subsampled_idx] = cur_color;
-                cur_color = cur_color + 20;    
+                cur_color = cur_color - 20;    
             }
         }
+
+        //normalize
+        for (var i=0;i<color_nums.length;i++)
+        {
+            color_nums[i] = color_nums[i]/400;
+        
+        }
+        
+        //hack to avoid auto-rescaling
+        color_nums[0] = 1;
+        color_nums[2700]= 0;
 
         //TODO : Subsampled scheme, needs to be debugged for adding missing images
         
