@@ -101,8 +101,8 @@
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="assets/pdf/2023-ConceptFusion.pdf"
-                   class="external-link button is-normal " disabled="true">
+                <a href="data/method_viz/AnyLoc_paper.pdf"
+                   class="external-link button is-normal ">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                   </span>
@@ -110,8 +110,8 @@
                 </a>
               </span>
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2302.07241"
-                   class="external-link button is-normal " disabled="true">
+                <a href="https://arxiv.org/abs/2308.00688"
+                   class="external-link button is-normal ">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
                   </span>
@@ -120,8 +120,8 @@
               </span>
               <!-- Video Link. -->
               <span class="link-block">
-                <a href="https://anyloc.github.io/"
-                   class="external-link button is-normal " disabled="true">
+                <a href="https://youtu.be/IBokVsJ6FZA"
+                   class="external-link button is-normal ">
                   <span class="icon">
                       <i class="fab fa-youtube"></i>
                   </span>
@@ -185,7 +185,8 @@
   </div>
 </section>
 
-<section class="section">
+<section class="hero is-small is-light">
+  <div class="hero-body">
   <div class="container is-max-desktop">
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
@@ -220,7 +221,7 @@
         </div>
       </div>
     </div>
-    <br>
+    </div>
     <!-- Paper video. -->
     <!-- <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -237,63 +238,13 @@
     <!--/ Paper video. -->
 </section>
 
-<br>
-<section class="hero is-small is-light">
-
-  <div class="columns is-centered has-text-centered">
-    <div class="column">
-      <h2 class="title is-3">Trajectory Similarity Videos</h2>
-      <p></p>
-    </div>
-  </div>
-
-  <div class="container is-max-desktop">
-  <div class="columns is-centered">
-
-  <div class="column has-text-centered">
-    <div class="content">
-      <h2 class="title is-4">VPAir</h2>
-      <video id="dinov2_gardens" autoplay controls muted playsinline height="100%">
-        <source src="./data/trajectory_videos/vpair_test.mp4"
-                type="video/mp4">
-      </video>
-      <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
-    </div>
-  </div>
-
-  <div class="column has-text-centered">
-    <div class="content">
-      <h2 class="title is-4">Hawkins</h2>
-      <video id="dinov2_gardens" autoplay controls muted playsinline height="100%">
-        <source src="./data/trajectory_videos/map_sim_1.mp4"
-                type="video/mp4">
-      </video>
-      <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
-    </div>
-  </div>
-
-  <div class="column has-text-centered">
-    <div class="content">
-      <h2 class="title is-4">Laurel Caverns</h2>
-      <video id="dinov2_gardens" autoplay controls muted playsinline height="100%">
-        <source src="./data/trajectory_videos/laurel_map_sim.mp4"
-                type="video/mp4">
-      </video>
-      <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
-    </div>
-  </div>
-  </div>
-
-  </div>
-</section>
-
 <section class="section">
   <div class="container is-max-desktop">
 
     <div class="columns is-centered has-text-centered">
       <div class="column">
         <h2 class="title is-3">Interactive Demo</h2>
-        <p></p>
+        <p> Click on a point on the left trajectory plot to see the best retrievals and retrieval heat-maps! </p>
       </div>
     </div>
 
@@ -345,12 +296,60 @@
     </div>
 
     <p></p>
-    <br>
-    <br>
     </div>
 </section>
 
-<section class="hero is-light is-small">
+<section class="hero is-small is-light">
+  <div class="hero-body">
+  <div class="columns is-centered has-text-centered">
+    <div class="column">
+      <h2 class="title is-3">Trajectory Similarity Videos</h2>
+      <p></p>
+    </div>
+  </div>
+
+  <div class="container is-max-desktop">
+  <div class="columns is-centered">
+
+  <div class="column has-text-centered">
+    <div class="content">
+      <h2 class="title is-4">VPAir</h2>
+      <video id="dinov2_gardens" autoplay controls muted playsinline height="100%">
+        <source src="./data/trajectory_videos/vpair_test.mp4"
+                type="video/mp4">
+      </video>
+      <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
+    </div>
+  </div>
+
+  <div class="column has-text-centered">
+    <div class="content">
+      <h2 class="title is-4">Hawkins</h2>
+      <video id="dinov2_gardens" autoplay controls muted playsinline height="100%">
+        <source src="./data/trajectory_videos/map_sim_1.mp4"
+                type="video/mp4">
+      </video>
+      <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
+    </div>
+  </div>
+
+  <div class="column has-text-centered">
+    <div class="content">
+      <h2 class="title is-4">Laurel Caverns</h2>
+      <video id="dinov2_gardens" autoplay controls muted playsinline height="100%">
+        <source src="./data/trajectory_videos/laurel_map_sim.mp4"
+                type="video/mp4">
+      </video>
+      <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
+    </div>
+  </div>
+  </div>
+
+  </div>
+  </div>
+</section>
+
+<section class="section">
   <div class="container is-max-desktop">
 
     <div class="columns is-centered has-text-centered">
@@ -389,7 +388,8 @@
     </div>
 
 </section>
-<section class="hero is-small">
+<section class="hero hero is-light is-small">
+  <div class="hero-body">
   <div class="container is-max-desktop">
 
     <div class="columns is-centered has-text-centered">
@@ -426,9 +426,27 @@
       </div>
     </div>
     <p></p>
+  </div>
 </section>
 
-<section class="hero is-light is-small">
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <h2 class="title is-3">AnyLoc Performance</h2>
+        <p></p>
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <img id="AnyLoc Performance" src = "data/method_viz/performance_radar_cropped.gif" width="500">
+    <div class="columns is-centered has-text-centered">
+  </div>
+</section>
+
+<section class="hero is-small is-light">
+  <div class="hero-body">
   <div class="container is-max-desktop">
 
     <div class="columns is-centered has-text-centered">
@@ -473,6 +491,7 @@
         </div>
       </div>
     </div>
+  </div>
   </div>
 </section>
 
