@@ -69,28 +69,29 @@
       <div class="columns is-centered">
         <div class="column has-text-centered">
           <h1 class="title is-2 publication-title">AnyLoc: Towards Universal Visual Place Recognition </h1>
-          <div class="is-size-6 publication-authors">
+          <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://nik-v9.github.io/">Nikhil Keetha*<sup>1</sup></a>,</span>
+              <a href="https://nik-v9.github.io/">Nikhil Keetha*,</a><sup>1</sup>,</span>
               <span class="author-block">
-                <a href="https://theprojectsguy.github.io/">Avneesh Mishra*<sup>2</sup></a>,</span>
+                <a href="https://theprojectsguy.github.io/">Avneesh Mishra*</a><sup>2</sup>,</span>
               <span class="author-block">
-                <a href="https://jaykarhade.netlify.app/">Jay Karhade*<sup>1</sup></a>,</span>
+                <a href="https://jaykarhade.netlify.app/">Jay Karhade*</a><sup>1</sup>,</span>
               <span class="author-block">
-                <a href="https://krrish94.github.io/">Krishna Murthy Jatavallabhula<sup>3</sup></a>and </span>  
+                <a href="https://krrish94.github.io/">Krishna Murthy Jatavallabhula</a><sup>3</sup>,</span> 
+                <br>
               <span class="author-block">
-              <a href="https://theairlab.org/">Sebastian Scherer<sup>1</sup></a>,</span>
+              <a href="https://theairlab.org/">Sebastian Scherer</a><sup>1</sup>,</span>
               <span class="author-block">
-                <a href="https://robotics.iiit.ac.in/">Madhava Krishna<sup>2</sup></a>,</span>  
+                <a href="https://robotics.iiit.ac.in/">Madhava Krishna</a><sup>2</sup>,</span>  
               <span class="author-block">
-              <a href="https://scholar.google.co.in/citations?user=oVS3HHIAAAAJ&hl=en">Sourav Garg<sup>4</sup></a></span>
+              <a href="https://scholar.google.co.in/citations?user=oVS3HHIAAAAJ&hl=en">Sourav Garg</a><sup>4</sup></span>
           </div>
 
           <div class="is-size-6 publication-authors">
-            <span class="author-block"><sup>1</sup><a href="https://www.ri.cmu.edu/">Carnegie Mellon University</a>,
-              <sup>2</sup><a href="https://robotics.iiit.ac.in//">IIIT-Hyderabad</a>,
-              <sup>3</sup><a href="https://www.csail.mit.edu/">Massachusetts Institute of Technology</a>,
-              <sup>4</sup><a href="https://www.adelaide.edu.au/aiml/">AIML,University of Adelaide</a></span>
+            <span class="author-block"><sup>1</sup>CMU</a>,
+              <sup>2</sup>IIIT-Hyderabad</a>,
+              <sup>3</sup>MIT</a>,
+              <sup>4</sup>AIML, University of Adelaide</a></span>
           </div>
 
           <div class="is-size-7 publication-authors">
@@ -130,8 +131,8 @@
               </span>
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://anyloc.github.io/"
-                   class="external-link button is-normal " disabled="true">
+                <a href="https://github.com/AnyLoc/AnyLoc"
+                   class="external-link button is-normal ">
                   <span class="icon">
                       <i class="fab fa-github"></i>
                   </span>
@@ -139,13 +140,23 @@
                   </a>
               </span>
               <!-- Demo Link. -->
-              <span class="link-block">
+              <!-- <span class="link-block">
                 <a href="#interactive_demo"
-                   class="external-link button is-normal is-rounded is-dark" disabled="true">
+                   class="external-link button is-normal">
                   <span class="icon">
-                      <i class="fa fa-basketball-ball"></i>
+                      <i class="fa fa-face-smiling-hands"></i>
                   </span>
                   <span>Demo</span>
+                  </a>
+              </span> -->
+
+              <span class="link-block">
+                <a href="#interactive_demo"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fa-solid fa-face-smiling-hands"></i>
+                  </span>
+                  <span>HF Demo</span>
                   </a>
               </span>
 
@@ -173,13 +184,13 @@
     <div class="hero-body">
       <!-- <video id="teaser" autoplay muted loop playsinline height="100%"> -->
         <!-- <img source src="./data/method_viz/Splash GIF.gif" /> -->
-        <video id="dinov2_gardens" autoplay controls muted playsinline height="100%">
+        <video id="dinov2_gardens" autoplay controls muted loop playsinline height="100%">
           <source src="./data/method_viz/splash_vid_compressed.mp4"
                   type="video/mp4">
         </video>
       <!-- </video> -->
       <h2 class="subtitle has-text-centered">
-        <span class="coolname">AnyLoc</span> leverages foundation model features to perform Zero-shot Visual Place Recognition.
+        <span class="coolname">AnyLoc</span> enables <span>universal visual place recognition (VPR) <i>anywhere</i>, <i>anytime</i> and under <i>anyview</i>.</span> 
       </h2>
     </div>
   </div>
@@ -194,19 +205,17 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Visual Place Recognition (VPR) is vital for robot
+            VPR is vital for robot
             localization. To date, the most performant VPR approaches
             are environment- and task-specific: while they exhibit strong
             performance in structured environments (predominantly urban
             driving), their performance degrades severely in unstructured
-            environments, rendering most approaches brittle to robust real-
-            world deployment. In this work, we develop a universal solution
+            environments, rendering most approaches brittle to robust realworld deployment. In this work, we develop a universal solution
             to VPR – a technique that works across a broad range of
             structured and unstructured environments (urban, outdoors,
             indoors, aerial, underwater, and subterranean environments)
             without any re-training or finetuning. We demonstrate that
-            general-purpose feature representations derived from off-the-
-            shelf self-supervised models with no VPR-specific training are
+            general-purpose feature representations derived from off-theshelf self-supervised models with no VPR-specific training are
             the right substrate upon which to build such a universal VPR
             solution. Combining these derived features with unsupervised
             feature aggregation enables our suite of methods, AnyLoc,
@@ -216,7 +225,7 @@
             these features, uncovering unique domains which encapsulate
             datasets from similar environments. Our detailed experiments
             and analysis lay a foundation for building VPR solutions
-            that may be deployed anywhere, anytime, and across anyview
+            that may be deployed anywhere, anytime, and across anyview.
           </p>
         </div>
       </div>
@@ -243,8 +252,33 @@
 
     <div class="columns is-centered has-text-centered">
       <div class="column">
-        <h2 class="title is-3">Interactive Demo</h2>
-        <p> Click on a point on the left trajectory plot to see the best retrievals and retrieval heat-maps! </p>
+        <h2 class="title is-3">AnyLoc Performance</h2>
+        <p></p>
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <img id="AnyLoc Performance" src = "data/method_viz/performance_radar_cropped.gif" width="500">
+    <div class="columns is-centered has-text-centered">
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <a id="interactive_demo"></a>
+        <h2 class="title is-3">Try out Universal VPR in action!</h2>
+        <div class="content has-text-justified">
+        <p> 
+          Simply click on any point on the query trajectory (upper left), and observe its best retrieval and similarity heatmap on the database trajectory (upper right). 
+          Use the drop-down menu to switch to a different environment. 
+          The corresponding query and the best retrieval image is visualized at the lower left and lower right respectively.
+          Points that are identified by &#11088 on the database trajectory indicate the best retrieval. 
+          Yellow indicates higher similarity in the database trajectory (upper right).
+        </p>
+        </div>
       </div>
     </div>
 
@@ -303,7 +337,7 @@
   <div class="hero-body">
   <div class="columns is-centered has-text-centered">
     <div class="column">
-      <h2 class="title is-3">Trajectory Similarity Videos</h2>
+      <h2 class="title is-3">Qualitative Retrieval Visualizations</h2>
       <p></p>
     </div>
   </div>
@@ -314,7 +348,7 @@
   <div class="column has-text-centered">
     <div class="content">
       <h2 class="title is-4">VPAir</h2>
-      <video id="dinov2_gardens" autoplay controls muted playsinline height="100%">
+      <video id="dinov2_gardens" autoplay controls muted loop playsinline height="100%">
         <source src="./data/trajectory_videos/vpair_test.mp4"
                 type="video/mp4">
       </video>
@@ -325,7 +359,7 @@
   <div class="column has-text-centered">
     <div class="content">
       <h2 class="title is-4">Hawkins</h2>
-      <video id="dinov2_gardens" autoplay controls muted playsinline height="100%">
+      <video id="dinov2_gardens" autoplay controls muted loop playsinline height="100%">
         <source src="./data/trajectory_videos/map_sim_1.mp4"
                 type="video/mp4">
       </video>
@@ -336,7 +370,7 @@
   <div class="column has-text-centered">
     <div class="content">
       <h2 class="title is-4">Laurel Caverns</h2>
-      <video id="dinov2_gardens" autoplay controls muted playsinline height="100%">
+      <video id="dinov2_gardens" autoplay controls muted loop playsinline height="100%">
         <source src="./data/trajectory_videos/laurel_map_sim.mp4"
                 type="video/mp4">
       </video>
@@ -354,7 +388,7 @@
 
     <div class="columns is-centered has-text-centered">
       <div class="column">
-        <h2 class="title is-3">Vocabulary-Specific Visualizations on Gardens Point</h2>
+        <h2 class="title is-3">Vocabulary Visualizations on Gardens Point</h2>
         <p></p>
       </div>
     </div>
@@ -363,7 +397,7 @@
       <div class="column has-text-centered">
         <div class="content">
           <h2 class="title is-4">Database Sample</h2>
-          <video id="dinov2_gardens" autoplay controls muted playsinline height="100%">
+          <video id="dinov2_gardens" autoplay controls muted loop playsinline height="100%">
             <source src="./data/viz_videos/row1_col1.webm"
                     type="video/mp4">
           </video>
@@ -374,7 +408,7 @@
       <div class="column has-text-centered">
         <div class="content">
           <h2 class="title is-4">Query Sample</h2>
-          <video id="dinov2_gardens" autoplay controls muted playsinline height="100%">
+          <video id="dinov2_gardens" autoplay controls muted loop playsinline height="100%">
             <source src="./data/viz_videos/row1_col2.webm"
                     type="video/mp4">
           </video>
@@ -394,7 +428,7 @@
 
     <div class="columns is-centered has-text-centered">
       <div class="column">
-        <h2 class="title is-3">Vocabulary Visualizations DINO vs DINOv2</h2>
+        <h2 class="title is-3">Vocabulary Visualizations comparing DINO & DINOv2</h2>
         <p></p>
       </div>
     </div>
@@ -404,7 +438,7 @@
       <div class="column has-text-centered">
         <div class="content">
           <h2 class="title is-4">DINO ViT-S L9 Key</h2>
-          <video id="dinov2_gardens" autoplay controls muted playsinline height="100%">
+          <video id="dinov2_gardens" autoplay controls muted loop playsinline height="100%">
             <source src="./data/viz_videos/row2_col1.webm"
                     type="video/mp4">
           </video>
@@ -415,7 +449,7 @@
       <div class="column has-text-centered">
         <div class="content">
           <h2 class="title is-4">DINOv2 ViT-S L10 Value</h2>
-          <video id="dinov2_gardens" autoplay controls muted playsinline height="100%">
+          <video id="dinov2_gardens" autoplay controls muted loop playsinline height="100%">
             <source src="./data/viz_videos/row2_col2.webm"
                     type="video/mp4">
           </video>
@@ -429,29 +463,13 @@
   </div>
 </section>
 
-<section class="section">
-  <div class="container is-max-desktop">
-
-    <div class="columns is-centered has-text-centered">
-      <div class="column">
-        <h2 class="title is-3">AnyLoc Performance</h2>
-        <p></p>
-      </div>
-    </div>
-
-    <div class="columns is-centered has-text-centered">
-      <img id="AnyLoc Performance" src = "data/method_viz/performance_radar_cropped.gif" width="500">
-    <div class="columns is-centered has-text-centered">
-  </div>
-</section>
-
 <section class="hero is-small is-light">
   <div class="hero-body">
   <div class="container is-max-desktop">
 
     <div class="columns is-centered has-text-centered">
       <div class="column">
-        <h2 class="title is-3">Layer Ablations DINO vs DINOv2</h2>
+        <h2 class="title is-3">Vocabulary Visualizations across DINO & DINOv2 layers</h2>
         <p></p>
       </div>
     </div>
@@ -461,7 +479,7 @@
       <div class="column has-text-centered">
         <div class="content">
           <h2 class="title is-4">DINO ViT-S Key</h2>
-          <video id="dinov2_gardens" autoplay controls muted playsinline height="100%">
+          <video id="dinov2_gardens" autoplay controls muted loop playsinline height="100%">
             <source src="./data/viz_videos/row3_col1.webm"
                     type="video/mp4">
           </video>
@@ -472,7 +490,7 @@
       <div class="column has-text-centered">
         <div class="content">
           <h2 class="title is-4">DINOv2 ViT-S Value</h2>
-          <video id="dinov2_gardens" autoplay controls muted playsinline height="100%">
+          <video id="dinov2_gardens" autoplay controls muted loop playsinline height="100%">
             <source src="./data/viz_videos/row3_col2.webm"
                     type="video/mp4">
           </video>
@@ -483,7 +501,7 @@
       <div class="column has-text-centered">
         <div class="content">
           <h2 class="title is-4">DINOv2 ViT-G Value</h2>
-          <video id="dinov2_gardens" autoplay controls muted playsinline height="100%">
+          <video id="dinov2_gardens" autoplay controls muted loop playsinline height="100%">
             <source src="./data/viz_videos/row3_col3.webm"
                     type="video/mp4">
           </video>
@@ -514,14 +532,13 @@
   <div class="container is-max-desktop content">
     <h2 class="title is-3">BibTeX</h2>
     <pre><code>
-@misc{keetha2023anyloc,
-      title={AnyLoc: Towards Universal Visual Place Recognition}, 
-      author={Nikhil Keetha and Avneesh Mishra and Jay Karhade and Krishna Murthy Jatavallabhula and Sebastian Scherer and Madhava Krishna and Sourav Garg},
-      year={2023},
-      eprint={2308.00688},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
-}</code></pre>
+      @article{AnyLoc,
+        author    = {Nikhil Keetha and Avneesh Mishra and Jay Karhade and Krishna Murthy Jatavallabhula and Sebastian Scherer and Madhava Krishna and Sourav Garg}
+        title     = {AnyLoc: Towards Universal Visual Place Recognition},
+        journal   = {arXiv},
+        year      = {2023},
+      }      
+    </code></pre>
   </div>
 </section>
 
@@ -539,8 +556,8 @@
             This website adapted from the Nerfies templates, which is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
           <p>
-            This means you are free to borrow the <a href="https://github.com/Nik-V9/found.github.io">source code</a> of this website,
-            we just ask that you link back to the <a href="https://github.com/nerfies/nerfies.github.io">Nerfies source code</a> in the footer.
+            If you use the <a href="https://github.com/AnyLoc/AnyLoc.github.io">source code</a> of this website,
+            please also link back to the <a href="https://github.com/nerfies/nerfies.github.io">Nerfies source code</a> in your footer.
           </p>
         </div>
       </div>
