@@ -9,7 +9,7 @@
   <meta name="keywords" content="AnyLoc,FoundVLAD, Foundation Models, Visual Place Recognition, VPR, DINOv2, DINO, SAM">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta property="og:image" content="assets/Thumbnail.png" />        
-  <title>AnyLoc: Towards Universal Visual Place Recognition </title>
+  <title>Long-range UAV Thermal Geo-localization with Satellite Imagery</title>
 
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -71,51 +71,29 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-2 publication-title">AnyLoc: Towards Universal Visual Place Recognition</h1>
-          <h2 class="title is-6 publlication-title">IEEE Robotics and Automation Letters (RA-L) 2023 & ICRA 2024</h2>
+          <h1 class="title is-2 publication-title">Long-range UAV Thermal Geo-localization with Satellite Imagery</h1>
+          <h2 class="title is-6 publlication-title"></h2>
           <div class="is-size-6 publication-authors">
             <span class="author-block">
-              <a href="https://nik-v9.github.io/">Nikhil Keetha*</a><sup>1</sup>,</span>
+              <a href="xjh19971.github.io">Jiuhong Xiao</a><sup>1</sup>,</span>
               <span class="author-block">
-                <a href="https://theprojectsguy.github.io/">Avneesh Mishra*</a><sup>2</sup>,</span>
+                <a href="https://scholar.google.com/citations?user=HXIhQT4AAAAJ&hl=en">Daniel Tortei</a><sup>2</sup>,</span>
               <span class="author-block">
-                <a href="https://jaykarhade.netlify.app/">Jay Karhade*</a><sup>1</sup>,</span>
+                <a href="https://scholar.google.com/citations?user=GZ-_ktwAAAAJ&hl=en">Eloy Roura</a><sup>2</sup>,</span>
               <span class="author-block">
-                <a href="https://krrish94.github.io/">Krishna Murthy Jatavallabhula</a><sup>3</sup>,</span> 
-                <br>
-              <span class="author-block">
-              <a href="https://theairlab.org/">Sebastian Scherer</a><sup>1</sup>,</span>
-              <span class="author-block">
-                <a href="https://robotics.iiit.ac.in/">Madhava Krishna</a><sup>2</sup>,</span>  
-              <span class="author-block">
-              <a href="https://scholar.google.co.in/citations?user=oVS3HHIAAAAJ&hl=en">Sourav Garg</a><sup>4</sup></span>
+                <a href="https://engineering.nyu.edu/faculty/giuseppe-loianno">Giuseppe Loianno</a><sup>1</sup>,</span> 
           </div>
 
           <div class="is-size-6 publication-authors">
-            <span class="author-block"><sup>1</sup>CMU</a>,
-              <sup>2</sup>IIIT-Hyderabad</a>,
-              <sup>3</sup>MIT</a>,
-              <sup>4</sup>AIML, University of Adelaide</a></span>
-          </div>
-
-          <div class="is-size-7 publication-authors">
-            <span class="author-block"><sup>*</sup>Co-first authors</span>
+            <span class="author-block"><sup>1</sup>New York University</a>,
+              <sup>2</sup>Technology Innovation Institute</a>,
           </div>
 
           <div class="column has-text-centered">
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="assets/AnyLoc.pdf"
-                   class="external-link button is-normal ">
-                  <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>Paper</span>
-                </a>
-              </span>
-              <span class="link-block">
-                <a href="https://arxiv.org/abs/2308.00688"
+                <a href="https://arxiv.org/abs/2306.02994"
                    class="external-link button is-normal ">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -125,7 +103,7 @@
               </span>
               <!-- Video Link. -->
               <span class="link-block">
-                <a href="https://www.youtube.com/watch?v=ITo8rMInatk&feature=youtu.be"
+                <a href="https://www.youtube.com/watch?v=KVHFcNsK8Bg&ab_channel=ARPLNYU"
                    class="external-link button is-normal ">
                   <span class="icon">
                       <i class="fab fa-youtube"></i>
@@ -135,32 +113,12 @@
               </span>
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/AnyLoc/AnyLoc"
+                <a href="https://github.com/arplaboratory/satellite-thermal-geo-localization"
                    class="external-link button is-normal ">
                   <span class="icon">
                       <i class="fab fa-github"></i>
                   </span>
                   <span>Code</span>
-                  </a>
-              </span>
-              <!-- Demo Link. -->
-              <span class="link-block">
-                <a href="#interactive_demo"
-                   class="external-link button is-normal">
-                  <span class="icon">
-                      <i class="fa fa-basketball-ball"></i>
-                  </span>
-                  <span>Demo</span>
-                  </a>
-              </span>
-              <!-- Hugging Face Demo Link. -->
-              <span class="link-block">
-                <a href="https://huggingface.co/spaces/TheProjectsGuy/AnyLoc"
-                   class="external-link button is-normal">
-                  <span class="icon">
-                      <i class="fa fa-face-smiling-hands"></i>
-                  </span>
-                  <span>HF Demo</span>
                   </a>
               </span>
           </div>
@@ -196,27 +154,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            VPR is vital for robot
-            localization. To date, the most performant VPR approaches
-            are environment- and task-specific: while they exhibit strong
-            performance in structured environments (predominantly urban
-            driving), their performance degrades severely in unstructured
-            environments, rendering most approaches brittle to robust realworld deployment. In this work, we develop a universal solution
-            to VPR – a technique that works across a broad range of
-            structured and unstructured environments (urban, outdoors,
-            indoors, aerial, underwater, and subterranean environments)
-            without any re-training or finetuning. We demonstrate that
-            general-purpose feature representations derived from off-theshelf self-supervised models with no VPR-specific training are
-            the right substrate upon which to build such a universal VPR
-            solution. Combining these derived features with unsupervised
-            feature aggregation enables our suite of methods, AnyLoc,
-            to achieve up to 4× significantly higher performance than
-            existing approaches. We further obtain a 6% improvement
-            in performance by characterizing the semantic properties of
-            these features, uncovering unique domains which encapsulate
-            datasets from similar environments. Our detailed experiments
-            and analysis lay a foundation for building VPR solutions
-            that may be deployed anywhere, anytime, and across anyview.
+            Onboard sensors, such as cameras and thermal sensors, have emerged as effective alternatives to Global Positioning System (GPS) for geo-localization in Unmanned Aerial Vehicle (UAV) navigation. Since GPS can suffer from signal loss and spoofing problems, researchers have explored camera-based techniques such as Visual Geo-localization (VG) using satellite RGB imagery. Additionally, thermal geo-localization (TG) has become crucial for long-range UAV flights in low-illumination environments. This paper proposes a novel thermal geo-localization framework using satellite RGB imagery, which includes multiple domain adaptation methods to address the limited availability of paired thermal and satellite images. The experimental results demonstrate the effectiveness of the proposed approach in achieving reliable thermal geo-localization performance, even in thermal images with indistinct self-similar features. We evaluate our approach on real data collected onboard a UAV. We also release the code and \textit{Boson-nighttime}, a dataset of paired satellite-thermal and unpaired satellite images for thermal geo-localization with satellite imagery. To the best of our knowledge, this work is the first to propose a thermal geo-localization method using satellite RGB imagery in long-range flights.
           </p>
         </div>
       </div>
@@ -243,7 +181,7 @@
 
     <div class="columns is-centered has-text-centered">
       <div class="column">
-        <h2 class="title is-3">AnyLoc Performance</h2>
+        <h2 class="title is-3">Example Image</h2>
         <p></p>
       </div>
     </div>
@@ -255,296 +193,20 @@
   </div>
 </section>
 
-<section class="hero is-light">
-  <div class="hero-body">
-  <!-- Paper video. -->
-  <div class="columns is-centered has-text-centered">
-    <div class="column is-three-fifths">
-      <h2 class="title is-3">Video</h2>
-      <div class="publication-video">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/ITo8rMInatk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>      </div>
-    </div>
-  </div>
-  </div>
-  <!--Paper video-->
-
-</section>
-
-<section class="section">
-  <div class="container is-max-desktop">
-
-    <div class="columns is-centered has-text-centered">
-      <div class="column">
-        <a id="interactive_demo"></a>
-        <h2 class="title is-3">Try out Universal VPR in action!</h2>
-        <div class="content has-text-justified">
-        <p> 
-          Simply click on any point on the query trajectory (upper left), and observe its best retrieval and similarity heatmap on the database trajectory (upper right). 
-          Use the drop-down menu to switch to a different environment. 
-          The corresponding query and the best retrieval image is visualized at the lower left and lower right respectively.
-          Points that are identified by &#11088 on the database trajectory indicate the best retrieval. 
-          Yellow indicates higher similarity in the database trajectory (upper right).
-        </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="columns is-centered">
-
-      <div class="control-row">
-        <select class="trajectorydata">
-        </select>
-      </div>
-
-    </div>
-
-    <div class="columns is-centered">
-
-      <div class="column has-text-centered">
-        <div class="content">
-          <div id="myPlot"></div>
-        </div>
-      </div>    
-
-      <div class="column has-text-centered">
-        <div class="content">
-          <div id="sim_myPlot"></div>
-        </div>
-        
-      </div>
-  
-    </div>
-
-    <div class="columns is-centered">
-
-      <div class="column has-text-centered">
-        <div class="content">
-          <h2 class="title is-4">Query Image</h2>
-        <img id="q_image" src = "data/VPAir_images/subsampled_vpair/queries/00001.png" width="500">
-        </div>
-      </div>
-
-      <div class="column has-text-centered">
-        <div class="content">
-          <h2 class="title is-4">Retrieved Image</h2>
-          <img id="db_image" src = "data/VPAir_images/subsampled_vpair/reference_views/00001.png" width="500">
-        </div>
-      </div>
-
-      <script src = "data/trajectory_data/hawkins.js"></script>
-      <script src = "demo/plot.js"></script>
-  
-    </div>
-
-    <p></p>
-    </div>
-</section>
-
-<section class="hero is-small is-light">
-  <div class="hero-body">
-  <div class="columns is-centered has-text-centered">
-    <div class="column">
-      <h2 class="title is-3">Qualitative Retrieval Visualizations</h2>
-      <p></p>
-    </div>
-  </div>
-
-  <div class="container is-max-desktop">
-  <div class="columns is-centered">
-
-  <div class="column has-text-centered">
-    <div class="content">
-      <h2 class="title is-4">VPAir</h2>
-      <video id="dinov2_gardens" autoplay controls muted loop playsinline height="100%">
-        <source src="./data/trajectory_videos/vpair_test.mp4"
-                type="video/mp4">
-      </video>
-      <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
-    </div>
-  </div>
-
-  <div class="column has-text-centered">
-    <div class="content">
-      <h2 class="title is-4">Hawkins</h2>
-      <video id="dinov2_gardens" autoplay controls muted loop playsinline height="100%">
-        <source src="./data/trajectory_videos/map_sim_1.mp4"
-                type="video/mp4">
-      </video>
-      <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
-    </div>
-  </div>
-
-  <div class="column has-text-centered">
-    <div class="content">
-      <h2 class="title is-4">Laurel Caverns</h2>
-      <video id="dinov2_gardens" autoplay controls muted loop playsinline height="100%">
-        <source src="./data/trajectory_videos/laurel_map_sim.mp4"
-                type="video/mp4">
-      </video>
-      <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
-    </div>
-  </div>
-  </div>
-
-  </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container is-max-desktop">
-
-    <div class="columns is-centered has-text-centered">
-      <div class="column">
-        <h2 class="title is-3">Vocabulary Visualizations on Gardens Point</h2>
-        <p></p>
-      </div>
-    </div>
-    
-    <div class="columns is-centered">
-      <div class="column has-text-centered">
-        <div class="content">
-          <h2 class="title is-4">Database Sample</h2>
-          <video id="dinov2_gardens" autoplay controls muted loop playsinline height="100%">
-            <source src="./data/viz_videos/row1_col1.webm"
-                    type="video/mp4">
-          </video>
-          <!-- <img src = "data/viz_gifs/row1_col1.gif"> -->
-        </div>
-      </div>
-      
-      <div class="column has-text-centered">
-        <div class="content">
-          <h2 class="title is-4">Query Sample</h2>
-          <video id="dinov2_gardens" autoplay controls muted loop playsinline height="100%">
-            <source src="./data/viz_videos/row1_col2.webm"
-                    type="video/mp4">
-          </video>
-          <!-- <img src = "data/viz_gifs/row1_col2.gif"> -->
-        </div>
-      </div>
-
-    </div>
-
-    <p></p>
-    </div>
-
-</section>
-<section class="hero hero is-light is-small">
-  <div class="hero-body">
-  <div class="container is-max-desktop">
-
-    <div class="columns is-centered has-text-centered">
-      <div class="column">
-        <h2 class="title is-3">Vocabulary Visualizations comparing DINO & DINOv2</h2>
-        <p></p>
-      </div>
-    </div>
-
-    <div class="columns is-centered">
-            
-      <div class="column has-text-centered">
-        <div class="content">
-          <h2 class="title is-4">DINO ViT-S L9 Key</h2>
-          <video id="dinov2_gardens" autoplay controls muted loop playsinline height="100%">
-            <source src="./data/viz_videos/row2_col1.webm"
-                    type="video/mp4">
-          </video>
-          <!-- <img src = "data/viz_gifs/row2_col1.gif"> -->
-        </div>
-      </div>
-
-      <div class="column has-text-centered">
-        <div class="content">
-          <h2 class="title is-4">DINOv2 ViT-S L10 Value</h2>
-          <video id="dinov2_gardens" autoplay controls muted loop playsinline height="100%">
-            <source src="./data/viz_videos/row2_col2.webm"
-                    type="video/mp4">
-          </video>
-          <!-- <img src = "data/viz_gifs/row2_col2.gif"> -->
-        </div>
-      </div>
-
-      </div>
-    </div>
-    <p></p>
-  </div>
-</section>
-
-<section class="hero is-small">
-  <div class="hero-body">
-  <div class="container is-max-desktop">
-
-    <div class="columns is-centered has-text-centered">
-      <div class="column">
-        <h2 class="title is-3">Vocabulary Visualizations across DINO & DINOv2 layers</h2>
-        <p></p>
-      </div>
-    </div>
-  
-    <div class="columns is-centered">
-
-      <div class="column has-text-centered">
-        <div class="content">
-          <h2 class="title is-4">DINO ViT-S Key</h2>
-          <video id="dinov2_gardens" autoplay controls muted loop playsinline height="100%">
-            <source src="./data/viz_videos/row3_col1.webm"
-                    type="video/mp4">
-          </video>
-          <!-- <img src = "data/viz_gifs/row3_col1.gif"> -->
-        </div>
-      </div>
-      
-      <div class="column has-text-centered">
-        <div class="content">
-          <h2 class="title is-4">DINOv2 ViT-S Value</h2>
-          <video id="dinov2_gardens" autoplay controls muted loop playsinline height="100%">
-            <source src="./data/viz_videos/row3_col2.webm"
-                    type="video/mp4">
-          </video>
-          <!-- <img src = "data/viz_gifs/row3_col2.gif"> -->
-        </div>
-      </div>
-
-      <div class="column has-text-centered">
-        <div class="content">
-          <h2 class="title is-4">DINOv2 ViT-G Value</h2>
-          <video id="dinov2_gardens" autoplay controls muted loop playsinline height="100%">
-            <source src="./data/viz_videos/row3_col3.webm"
-                    type="video/mp4">
-          </video>
-          <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
-        </div>
-      </div>
-    </div>
-  </div>
-  </div>
-</section>
-
-<script type="text/javascript">
-  $(function() {
-  var screenWidth = $(window).width();
-  if (screenWidth >= 800) {
-    $('#gpt-video-1').attr('autoplay', 'autoplay');
-  }
-  if (screenWidth >= 800) {
-    $('#gpt-video-2').attr('autoplay', 'autoplay');
-  }
-  if (screenWidth >= 800) {
-    $('#click-query-icl').attr('autoplay', 'autoplay');
-  }
-});
-</script>
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title is-3">BibTeX</h2>
     <pre><code>
-      @article{keetha2023anyloc,
-        title={AnyLoc: Towards Universal Visual Place Recognition},
-        author={Keetha, Nikhil and Mishra, Avneesh and Karhade, Jay and Jatavallabhula, Krishna Murthy and Scherer, Sebastian and Krishna, Madhava and Garg, Sourav},
-        journal={arXiv preprint arXiv:2308.00688},
-        year={2023}
-      }
+      @INPROCEEDINGS{10342068,
+        author={Xiao, Jiuhong and Tortei, Daniel and Roura, Eloy and Loianno, Giuseppe},
+        booktitle={2023 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)}, 
+        title={Long-Range UAV Thermal Geo-Localization with Satellite Imagery}, 
+        year={2023},
+        volume={},
+        number={},
+        pages={5820-5827},
+        doi={10.1109/IROS55552.2023.10342068}}
     </code></pre>
   </div>
 </section>
@@ -563,8 +225,8 @@
             This website adapted from the Nerfies templates, which is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
           <p>
-            If you use the <a href="https://github.com/AnyLoc/AnyLoc.github.io">source code</a> of this website,
-            please also link back to the <a href="https://github.com/nerfies/nerfies.github.io">Nerfies source code</a> in your footer.
+            If you use the <a href="https://xjh19971.github.io/STGL/">source code</a> of this website,
+            please also link back to the <a href="https://github.com/AnyLoc/AnyLoc.github.io">Nerfies source code</a> in your footer.
           </p>
         </div>
       </div>
