@@ -151,7 +151,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Onboard sensors, such as cameras and thermal sensors, have emerged as effective alternatives to Global Positioning System (GPS) for geo-localization in Unmanned Aerial Vehicle (UAV) navigation. Since GPS can suffer from signal loss and spoofing problems, researchers have explored camera-based techniques such as Visual Geo-localization (VG) using satellite RGB imagery. Additionally, thermal geo-localization (TG) has become crucial for long-range UAV flights in low-illumination environments. This paper proposes a novel thermal geo-localization framework using satellite RGB imagery, which includes multiple domain adaptation methods to address the limited availability of paired thermal and satellite images. The experimental results demonstrate the effectiveness of the proposed approach in achieving reliable thermal geo-localization performance, even in thermal images with indistinct self-similar features. We evaluate our approach on real data collected onboard a UAV. We also release the code and \textit{Boson-nighttime}, a dataset of paired satellite-thermal and unpaired satellite images for thermal geo-localization with satellite imagery. To the best of our knowledge, this work is the first to propose a thermal geo-localization method using satellite RGB imagery in long-range flights.
+            Onboard sensors, such as cameras and thermal sensors, have emerged as effective alternatives to Global Positioning System (GPS) for geo-localization in Unmanned Aerial Vehicle (UAV) navigation. Since GPS can suffer from signal loss and spoofing problems, researchers have explored camera-based techniques such as Visual Geo-localization (VG) using satellite RGB imagery. Additionally, thermal geo-localization (TG) has become crucial for long-range UAV flights in low-illumination environments. This paper proposes a novel thermal geo-localization framework using satellite RGB imagery, which includes multiple domain adaptation methods to address the limited availability of paired thermal and satellite images. The experimental results demonstrate the effectiveness of the proposed approach in achieving reliable thermal geo-localization performance, even in thermal images with indistinct self-similar features. We evaluate our approach on real data collected onboard a UAV. We also release the code and Boson-nighttime, a dataset of paired satellite-thermal and unpaired satellite images for thermal geo-localization with satellite imagery. To the best of our knowledge, this work is the first to propose a thermal geo-localization method using satellite RGB imagery in long-range flights.
           </p>
         </div>
       </div>
@@ -161,37 +161,18 @@
 
 <section class="section">
   <div class="columns is-centered has-text-centered">
-    <div class="column">
-      <h2 class="title is-3">TGM Generated Thermal Images</h2>
-      <p></p>
+    <div class="column is-four-fifths">
+      <h2 class="title is-3">Boson-nighttime</h2>
+      <div class="content has-text-justified">
+        <p>
+          We used FLIR's Boson thermal imager (8.7 mm focal length, 640p resolution, and 50-degree horizontal field of view). The collected images are nadir at approx. 1m/px spatial resolution. We performed six flights from 9:00 PM to 4:00 AM and label this dataset as Boson-nighttime, accordingly. To create a single map, we first run a structure-from-motion (SfM) algorithm to reconstruct the thermal map from multiple views. Subsequently, orthorectification is performed by aligning the photometric satellite maps with thermal maps at the same spatial resolution. The ground area covered by Boson-nighttime measures 33km^2 in total. The most prevalent map feature is the desert, with small portions of farms, roads, and buildings. The low-contrast self-similar thermal features in the desert regions have made it difficult for geo-localization at a finer scale. The Bing satellite map (https://www.bing.com/maps/aerial) is cropped in the corresponding area as our satellite reference map. We tile the thermal map into 512x512 px thermal image crops with a stride of 35 px. Each thermal image crop pairs with the corresponding satellite image crop. Areas covered by three flights of Boson-nighttime are used for training and validation. The remaining areas, covered by the other three flights are used for testing. The train/validation/test splits for Boson-nighttime are 10256/13011/26568 pairs of satellite and thermal image crops, respectively. 
+        </p>
+      </div>
+      <p><img id="tgm_1" src="./data/boson-nighttime.png" width="500"></p>
     </div>
   </div>
 
-  <div class="container is-max-desktop">
-    <div class="columns is-centered">
-
-      <div class="column has-text-centered">
-        <div class="content">
-          <h2 class="title is-4">Satellite</h2>
-          <img id="tgm_1" src="./data/tgm/tgm_1.gif" width="400">
-        </div>
-      </div>
-
-      <div class="column has-text-centered">
-        <div class="content">
-          <h2 class="title is-4">Enhanced Generated</h2>
-          <img id="tgm_2" src="./data/tgm/tgm_2.gif" width="400">
-        </div>
-      </div>
-
-      <div class="column has-text-centered">
-        <div class="content">
-          <h2 class="title is-4">Enhanced Ground Truth</h2>
-          <img id="tgm_3" src="./data/tgm/tgm_3.gif" width="400">
-        </div>
-      </div>
-    </div>
-  </div>
+ 
 </section>
 
 <section class="hero is-light">
@@ -240,6 +221,41 @@
 </div>
 </section>
 
+
+<section class="section">
+  <div class="columns is-centered has-text-centered">
+    <div class="column">
+      <h2 class="title is-3">TGM Generated Thermal Images</h2>
+      <p></p>
+    </div>
+  </div>
+
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+
+      <div class="column has-text-centered">
+        <div class="content">
+          <h2 class="title is-4">Satellite</h2>
+          <img id="tgm_1" src="./data/tgm/tgm_1.gif" width="400">
+        </div>
+      </div>
+
+      <div class="column has-text-centered">
+        <div class="content">
+          <h2 class="title is-4">Enhanced Generated</h2>
+          <img id="tgm_2" src="./data/tgm/tgm_2.gif" width="400">
+        </div>
+      </div>
+
+      <div class="column has-text-centered">
+        <div class="content">
+          <h2 class="title is-4">Enhanced Ground Truth</h2>
+          <img id="tgm_3" src="./data/tgm/tgm_3.gif" width="400">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
