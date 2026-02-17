@@ -170,9 +170,9 @@
       </div>
   </section>
 
+  <!-- Video -->
   <section class="hero teaser">
     <div class="hero-body">
-      <!-- Paper video. -->
       <div class="columns is-centered has-text-centered">
         <div class="column is-three-fifths">
           <h2 class="title is-3">Video</h2>
@@ -185,15 +185,12 @@
         </div>
       </div>
     </div>
-    <!--Paper video-->
   </section>
 
-
-
+  <!-- Abstract -->
   <section class="hero is-small is-light">
     <div class="hero-body">
       <div class="container">
-        <!-- Abstract. -->
         <div class="columns is-centered has-text-centered">
           <div class="column is-full">
             <h2 class="title is-3">Abstract</h2>
@@ -219,26 +216,80 @@
       </div>
   </section>
 
+  <!-- Overview -->
+  <section class="section">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Overview</h2>
+        <p><img src="./static/images/teaser-1.png" alt="STGL overview: UAV thermal geo-localization pipeline"
+            style="max-width: 50%;"></p>
+        <div class="content has-text-justified" style="margin-top: 1rem;">
+          <p>
+            STGL enables GPS-free geo-localization for UAVs during nighttime flights by matching thermal imagery
+            against satellite RGB maps.
+          </p>
+          <p>
+            <strong>Top:</strong> A UAV equipped with a thermal sensor sends thermal embeddings and its last known
+            location to an onboard/offboard database, which matches satellite embeddings and returns georeferenced
+            data.
+            <strong>Bottom:</strong> The Thermal Generative Module (TGM) takes paired and unpaired satellite data
+            to generate thermal images, enabling both geo-localization training and domain adaptation.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Method -->
+  <section class="hero is-small is-light">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-full">
+            <h2 class="title is-3">Method</h2>
+            <p><img src="./static/images/framework-1.png" alt="STGL framework diagram"
+                style="max-width: 100%;"></p>
+            <div class="content has-text-justified" style="margin-top: 1rem;">
+              <p>
+                The proposed framework has two main components: a <strong>Thermal Generative Module (TGM)</strong> and a
+                <strong>Satellite-thermal Geo-localization Module (SGM)</strong>.
+                TGM leverages a pix2pix model to generate fake thermal images from satellite images, trained with GAN
+                and L1 losses.
+                SGM uses a feature extractor with NetVLAD aggregation, trained with triplet margin loss and
+                DANN loss for domain adaptation between thermal and satellite image domains.
+                The generated paired dataset from TGM augments the limited real paired data, significantly improving
+                geo-localization performance.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Boson-nighttime -->
   <section class="section">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Boson-nighttime</h2>
         <div class="content has-text-justified">
           <p>
-            We used FLIR's Boson thermal imager (8.7 mm focal length, 640p resolution, and 50-degree horizontal field of
-            view). The collected images are nadir at approx. 1m/px spatial resolution. We performed six flights from
-            9:00 PM to 4:00 AM and label this dataset as Boson-nighttime, accordingly. To create a single map, we first
-            run a structure-from-motion (SfM) algorithm to reconstruct the thermal map from multiple views.
-            Subsequently, orthorectification is performed by aligning the photometric satellite maps with thermal maps
-            at the same spatial resolution. The ground area covered by Boson-nighttime measures 33km^2 in total. The
-            most prevalent map feature is the desert, with small portions of farms, roads, and buildings. The
-            low-contrast self-similar thermal features in the desert regions have made it difficult for geo-localization
-            at a finer scale. The Bing satellite map (https://www.bing.com/maps/aerial) is cropped in the corresponding
-            area as our satellite reference map. We tile the thermal map into 512x512 px thermal image crops with a
-            stride of 35 px. Each thermal image crop pairs with the corresponding satellite image crop. Areas covered by
-            three flights of Boson-nighttime are used for training and validation. The remaining areas, covered by the
-            other three flights are used for testing. The train/validation/test splits for Boson-nighttime are
-            10256/13011/26568 pairs of satellite and thermal image crops, respectively.
+            We introduce <strong>Boson-nighttime</strong>, a new dataset of paired satellite-thermal images
+            for thermal geo-localization research. Data was captured using a FLIR Boson thermal imager
+            (8.7 mm focal length, 640p resolution, 50&deg; horizontal FOV) across six nighttime flights
+            (9:00 PM&ndash;4:00 AM), producing nadir imagery at approximately 1 m/px spatial resolution.
+          </p>
+          <p>
+            Thermal maps were reconstructed via structure-from-motion (SfM) and orthorectified by aligning
+            with Bing satellite maps at the same spatial resolution. The dataset covers
+            <strong>33 km&sup2;</strong> of predominantly desert terrain with scattered farms, roads, and
+            buildings. The low-contrast, self-similar thermal features in desert regions make fine-grained
+            geo-localization particularly challenging.
+          </p>
+          <p>
+            We tile the thermal and satellite maps into 512&times;512 px crops with a stride of 35 px,
+            creating matched pairs. Three flight areas are used for training and validation, and three for
+            testing, yielding <strong>10,256 / 13,011 / 26,568</strong> train/val/test pairs respectively.
           </p>
         </div>
         <p><img id="tgm_1" src="./data/boson-nighttime.png" width="500"></p>
@@ -248,6 +299,7 @@
 
   </section>
 
+  <!-- SGM Results -->
   <section class="hero is-light">
     <div class="hero-body">
       <div class="columns is-centered has-text-centered">
@@ -264,30 +316,30 @@
           <div class="column has-text-centered">
             <div class="content">
               <h2 class="title is-4">Input</h2>
-              <img id="sgm_1" src="./data/sgm/image35.gif" width="400">
-              <img id="sgm_2" src="./data/sgm/image42.gif" width="400">
-              <img id="sgm_3" src="./data/sgm/image36.gif" width="400">
-              <img id="sgm_4" src="./data/sgm/image39.gif" width="400">
+              <video autoplay loop muted playsinline width="400"><source src="./data/sgm/image35.mp4" type="video/mp4"></video>
+              <video autoplay loop muted playsinline width="400"><source src="./data/sgm/image42.mp4" type="video/mp4"></video>
+              <video autoplay loop muted playsinline width="400"><source src="./data/sgm/image36.mp4" type="video/mp4"></video>
+              <video autoplay loop muted playsinline width="400"><source src="./data/sgm/image39.mp4" type="video/mp4"></video>
             </div>
           </div>
 
           <div class="column has-text-centered">
             <div class="content">
               <h2 class="title is-4">Baseline</h2>
-              <img id="sgm_5" src="./data/sgm/image31.gif" width="400">
-              <img id="sgm_6" src="./data/sgm/image32.gif" width="400">
-              <img id="sgm_7" src="./data/sgm/image33.gif" width="400">
-              <img id="sgm_8" src="./data/sgm/image34.gif" width="400">
+              <video autoplay loop muted playsinline width="400"><source src="./data/sgm/image31.mp4" type="video/mp4"></video>
+              <video autoplay loop muted playsinline width="400"><source src="./data/sgm/image32.mp4" type="video/mp4"></video>
+              <video autoplay loop muted playsinline width="400"><source src="./data/sgm/image33.mp4" type="video/mp4"></video>
+              <video autoplay loop muted playsinline width="400"><source src="./data/sgm/image34.mp4" type="video/mp4"></video>
             </div>
           </div>
 
           <div class="column has-text-centered">
             <div class="content">
               <h2 class="title is-4">Ours</h2>
-              <img id="sgm_9" src="./data/sgm/image37.gif" width="400">
-              <img id="sgm_6" src="./data/sgm/image38.gif" width="400">
-              <img id="sgm_7" src="./data/sgm/image40.gif" width="400">
-              <img id="sgm_8" src="./data/sgm/image41.gif" width="400">
+              <video autoplay loop muted playsinline width="400"><source src="./data/sgm/image37.mp4" type="video/mp4"></video>
+              <video autoplay loop muted playsinline width="400"><source src="./data/sgm/image38.mp4" type="video/mp4"></video>
+              <video autoplay loop muted playsinline width="400"><source src="./data/sgm/image40.mp4" type="video/mp4"></video>
+              <video autoplay loop muted playsinline width="400"><source src="./data/sgm/image41.mp4" type="video/mp4"></video>
             </div>
           </div>
         </div>
@@ -295,7 +347,64 @@
     </div>
   </section>
 
+  <!-- Results Histogram -->
+  <!-- <section class="section">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-three-fifths">
+        <h2 class="title is-3">Results</h2>
+        <div class="content has-text-justified">
+          <p>
+            The histogram below compares the L2 distance error distribution between the Baseline Model (ResNet-18) and
+            Our Best Model (ResNet-18 with CE, DANN only positive, and generated dataset). Our Best Model achieves
+            <strong>R@1 &gt; 90</strong>, <strong>R@5 &gt; 95</strong>, and
+            <strong>L2 error &lt; 15m</strong>, significantly outperforming the baseline. The histogram
+            shows that our model produces more low-error retrievals and far fewer localization failures.
+          </p>
+        </div>
+        <p><img src="./static/images/hist.png" alt="Histogram of L2 distance error" style="max-width: 100%;"></p>
+      </div>
+    </div>
+  </section> -->
 
+  <!-- Contrast Enhancement -->
+  <section class="hero is-light">
+    <div class="hero-body">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-three-fifths">
+          <h2 class="title is-3">Contrast Enhancement</h2>
+          <div class="content has-text-justified">
+            <p>
+              Raw thermal images are low-contrast with indistinct self-similar features. We apply contrast enhancement
+              (CE) to boost feature visibility, which significantly improves geo-localization accuracy. Below: satellite
+              images (left), raw thermal images (center), and contrast-enhanced thermal images (right).
+            </p>
+          </div>
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <h2 class="title is-6">Satellite</h2>
+              <img src="./static/images/4865_satellite.jpg" width="150" style="margin-bottom: 0.5rem;">
+              <img src="./static/images/7786_satellite.jpg" width="150" style="margin-bottom: 0.5rem;">
+              <img src="./static/images/8070_satellite.jpg" width="150">
+            </div>
+            <div class="column has-text-centered">
+              <h2 class="title is-6">Raw Thermal</h2>
+              <img src="./static/images/4865_gt.jpg" width="150" style="margin-bottom: 0.5rem;">
+              <img src="./static/images/7786_gt.jpg" width="150" style="margin-bottom: 0.5rem;">
+              <img src="./static/images/8070_gt.jpg" width="150">
+            </div>
+            <div class="column has-text-centered">
+              <h2 class="title is-6">CE Thermal</h2>
+              <img src="./static/images/4865_gt_contrast.jpg" width="150" style="margin-bottom: 0.5rem;">
+              <img src="./static/images/7786_gt_contrast.jpg" width="150" style="margin-bottom: 0.5rem;">
+              <img src="./static/images/8070_gt_contrast.jpg" width="150">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TGM Results -->
   <section class="section">
     <div class="columns is-centered has-text-centered">
       <div class="column">
@@ -310,21 +419,21 @@
         <div class="column has-text-centered">
           <div class="content">
             <h2 class="title is-4">Satellite</h2>
-            <img id="tgm_1" src="./data/tgm/tgm_1.gif" width="400">
+            <video autoplay loop muted playsinline width="400"><source src="./data/tgm/tgm_1.mp4" type="video/mp4"></video>
           </div>
         </div>
 
         <div class="column has-text-centered">
           <div class="content">
             <h2 class="title is-4">Enhanced Generated</h2>
-            <img id="tgm_2" src="./data/tgm/tgm_2.gif" width="400">
+            <video autoplay loop muted playsinline width="400"><source src="./data/tgm/tgm_2.mp4" type="video/mp4"></video>
           </div>
         </div>
 
         <div class="column has-text-centered">
           <div class="content">
             <h2 class="title is-4">Enhanced Ground Truth</h2>
-            <img id="tgm_3" src="./data/tgm/tgm_3.gif" width="400">
+            <video autoplay loop muted playsinline width="400"><source src="./data/tgm/tgm_3.mp4" type="video/mp4"></video>
           </div>
         </div>
       </div>
@@ -337,8 +446,8 @@
       <pre><code>
       @INPROCEEDINGS{10342068,
         author={Xiao, Jiuhong and Tortei, Daniel and Roura, Eloy and Loianno, Giuseppe},
-        booktitle={2023 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)}, 
-        title={Long-Range UAV Thermal Geo-Localization with Satellite Imagery}, 
+        booktitle={2023 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
+        title={Long-Range UAV Thermal Geo-Localization with Satellite Imagery},
         year={2023},
         volume={},
         number={},
